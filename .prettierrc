@@ -1,0 +1,19 @@
+{
+  "proseWrap": "always",
+  "printWidth": 80,
+  "tabWidth": 2,
+  "overrides": [
+    {
+      "files": "*.sql",
+      "options": {
+        "parser": "sql"
+      }
+    },
+    {
+      "files": "*.mmd",
+      "options": {
+        "parser": "markdown"
+      }
+    }
+  ]
+}
