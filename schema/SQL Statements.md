@@ -2,9 +2,9 @@
 
 ### Pharmacy
 ```sql
-INSERT INTO Pharmacy VALUES (1, 'HealthPlus Pharmacy', '123 Main St', '3135551000');
-INSERT INTO Pharmacy VALUES (2, 'CareWell Pharmacy', '456 Oak Ave', '3135552000');
-INSERT INTO Pharmacy VALUES (3, 'MediTrust Pharmacy', '789 Pine Rd', '3135553000');
+INSERT INTO Pharmacy VALUES (1, 'HealthPlus Pharmacy', '123 Main St', 'Dearborn', 'MI', '3135551000');
+INSERT INTO Pharmacy VALUES (2, 'CareWell Pharmacy', '456 Oak Ave', 'Detroit', 'MI', '3135552000');
+INSERT INTO Pharmacy VALUES (3, 'MediTrust Pharmacy', '789 Pine Rd', 'Ann Arbor', 'MI', '3135553000');
 ```
 
 ### DrugManufacturer
@@ -21,6 +21,7 @@ INSERT INTO Employee VALUES (2, 1, 'Bob Johnson', '34 Maple St', 'Dearborn', 'MI
 INSERT INTO Employee VALUES (3, 2, 'Carol White', '56 Oak St', 'Detroit', 'MI', '1982-11-03', 'Pharmacist', 'Morning');
 INSERT INTO Employee VALUES (4, 2, 'David Brown', '78 Pine St', 'Detroit', 'MI', '1995-02-25', 'Technician', 'Night');
 INSERT INTO Employee VALUES (5, 3, 'Emma Davis', '90 Cedar St', 'Ann Arbor', 'MI', '1988-09-14', 'Pharmacist', 'Evening');
+INSERT INTO Employee VALUES (6, 3, 'Grace Hopper', '123 Huron St', 'Ann Arbor', 'MI', '1994-03-20', 'Technician', 'Morning');
 ```
 
 ### Pharmacist
