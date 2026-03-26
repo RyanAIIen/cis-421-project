@@ -14,7 +14,7 @@ Pharmacy(<u>pharmacy_id</u>, name, address, phone)
 #### DDL
 
 ```sql
-Pharmacy(
+CREATE TABLE Pharmacy(
     pharmacy_id: INTEGER PRIMARY KEY,
     name: VARCHAR(100) NOT NULL,
     address: VARCHAR(200),
@@ -35,7 +35,7 @@ employee_type, shift_time)
 #### DDL
 
 ```sql
-Employee(
+CREATE TABLE Employee(
     employee_id: INTEGER PRIMARY KEY,
     pharmacy_id: INTEGER NOT NULL,
     name: VARCHAR(100) NOT NULL,
@@ -61,7 +61,7 @@ Pharmacist(<u>employee_id</u>, degree)
 #### DDL
 
 ```sql
-Pharmacist(
+CREATE TABLE Pharmacist(
     employee_id: INTEGER PRIMARY KEY,
     degree: VARCHAR(100),
     FOREIGN KEY (employee_id) REFERENCES Employee(employee_id) ON DELETE CASCADE
@@ -80,7 +80,7 @@ PharmacyTechnician(<u>employee_id</u>, certification)
 #### DDL
 
 ```sql
-PharmacyTechnician(
+CREATE TABLE PharmacyTechnician(
     employee_id: INTEGER PRIMARY KEY,
     certification: VARCHAR(100),
     FOREIGN KEY (employee_id) REFERENCES Employee(employee_id) ON DELETE CASCADE
@@ -100,7 +100,7 @@ primary_pharmacist_id)
 #### DDL
 
 ```sql
-Patient(
+CREATE TABLE Patient(
     patient_id: INTEGER PRIMARY KEY,
     name: VARCHAR(100) NOT NULL,
     sex: CHAR(1) CHECK (sex IN ('M', 'F', 'O')),
@@ -125,7 +125,7 @@ PatientPhone(<u>patient_id, phone_number</u>)
 #### DDL
 
 ```sql
-PatientPhone(
+CREATE TABLE PatientPhone(
     patient_id: INTEGER,
     phone_number: VARCHAR(15),
     PRIMARY KEY (patient_id, phone_number),
@@ -144,7 +144,7 @@ Drug(<u>drug_id</u>, trade_name, manufacturer_id)
 #### DDL
 
 ```sql
-Drug(
+CREATE TABLE Drug(
     drug_id: INTEGER PRIMARY KEY,
     trade_name: VARCHAR(100) NOT NULL,
     manufacturer_id: INTEGER NOT NULL,
@@ -165,7 +165,7 @@ DrugManufacturer(<u>manufacturer_id</u>, name, street, city, state)
 #### DDL
 
 ```sql
-DrugManufacturer(
+CREATE TABLE DrugManufacturer(
     manufacturer_id: INTEGER PRIMARY KEY,
     name: VARCHAR(100) NOT NULL,
     street: VARCHAR(100),
@@ -199,7 +199,7 @@ PharmacySells(<u>pharmacy_id, drug_id</u>, price)
 #### DDL
 
 ```sql
-PharmacySells(
+CREATE TABLE PharmacySells(
     pharmacy_id: INTEGER,
     drug_id: INTEGER,
     price: DECIMAL(10, 2) NOT NULL,
@@ -219,7 +219,7 @@ prescription_date, quantity)
 #### DDL
 
 ```sql
-Prescription(
+CREATE TABLE Prescription(
     prescription_id: INTEGER PRIMARY KEY,
     pharmacist_id: INTEGER NOT NULL,
     patient_id: INTEGER NOT NULL,
@@ -248,7 +248,7 @@ contract_end_date)
 #### DDL
 
 ```sql
-PharmacyContract(
+CREATE TABLE PharmacyContract(
     pharmacy_id: INTEGER,
     manufacturer_id: INTEGER,
     contract_date: DATE,
