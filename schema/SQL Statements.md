@@ -1,11 +1,11 @@
 ## Insert Statements
 
 ### Pharmacy
-
+```sql
 INSERT INTO Pharmacy VALUES (1, 'HealthPlus Pharmacy', '123 Main St', '3135551000');
 INSERT INTO Pharmacy VALUES (2, 'CareWell Pharmacy', '456 Oak Ave', '3135552000');
 INSERT INTO Pharmacy VALUES (3, 'MediTrust Pharmacy', '789 Pine Rd', '3135553000');
-
+```
 
 ### DrugManufacturer
 
