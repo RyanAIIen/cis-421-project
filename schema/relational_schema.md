@@ -17,7 +17,9 @@ Pharmacy(<u>pharmacy_id</u>, name, address, phone)
 CREATE TABLE Pharmacy(
     pharmacy_id INTEGER PRIMARY KEY,
     name VARCHAR(100) NOT NULL,
-    address VARCHAR(200),
+    street VARCHAR(100),
+    city VARCHAR(50),
+    state VARCHAR(2),
     phone VARCHAR(15)
 )
 ```
