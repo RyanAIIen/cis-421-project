@@ -148,6 +148,7 @@ Drug(
     drug_id: INTEGER PRIMARY KEY,
     trade_name: VARCHAR(100) NOT NULL,
     manufacturer_id: INTEGER NOT NULL,
+    quantity: INTEGER NOT NULL,
     FOREIGN KEY (manufacturer_id) REFERENCES DrugManufacturer(manufacturer_id)
 )
 ```
