@@ -65,6 +65,15 @@ INSERT INTO Drug VALUES (4, 'Metformin', 1, 120);
 INSERT INTO Drug VALUES (5, 'Lisinopril', 2, 180);
 ```
 
+### Doctor
+```sql
+INSERT INTO Doctor VALUES (1, 'Dr. Robert Chen', 'Cardiology', '3139991001', '200 Medical Dr', 'Dearborn', 'MI');
+INSERT INTO Doctor VALUES (2, 'Dr. Lisa Patel', 'Family Medicine', '3139991002', '210 Health Ave', 'Detroit', 'MI');
+INSERT INTO Doctor VALUES (3, 'Dr. James Wilson', 'Internal Medicine', '3139991003', '220 Clinic Rd', 'Ann Arbor', 'MI');
+INSERT INTO Doctor VALUES (4, 'Dr. Maria Garcia', 'Endocrinology', '3139991004', '230 Wellness Blvd', 'Dearborn', 'MI');
+INSERT INTO Doctor VALUES (5, 'Dr. Kevin Park', 'Orthopedics', '3139991005', '240 Care Ln', 'Detroit', 'MI');
+```
+
 ### PharmacySells
 ```sql
 INSERT INTO PharmacySells VALUES (1, 1, 5.99);
@@ -77,11 +86,11 @@ INSERT INTO PharmacySells VALUES (3, 1, 6.49);
 
 ### Prescription
 ```sql
-INSERT INTO Prescription VALUES (1, 1, 1, 1, '2026-01-10', 30);
-INSERT INTO Prescription VALUES (2, 3, 2, 3, '2026-01-12', 20);
-INSERT INTO Prescription VALUES (3, 5, 3, 5, '2026-01-15', 60);
-INSERT INTO Prescription VALUES (4, 1, 4, 2, '2026-01-18', 15);
-INSERT INTO Prescription VALUES (5, 3, 5, 4, '2026-01-20', 45);
+INSERT INTO Prescription VALUES (1, 1, 1, 1, 1, '2026-01-10', 30);
+INSERT INTO Prescription VALUES (2, 2, 3, 2, 3, '2026-01-12', 20);
+INSERT INTO Prescription VALUES (3, 3, 5, 3, 5, '2026-01-15', 60);
+INSERT INTO Prescription VALUES (4, 4, 1, 4, 2, '2026-01-18', 15);
+INSERT INTO Prescription VALUES (5, 1, 3, 5, 4, '2026-01-20', 45);
 ```
 
 ### PharmacyContract

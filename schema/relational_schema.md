@@ -135,6 +135,28 @@ CREATE TABLE PatientPhone(
 )
 ```
 
+### Doctor
+
+Licensed physician who writes prescriptions for patients.
+
+#### Logical Schema
+
+Doctor(<u>doctor_id</u>, name, specialty, phone, street, city, state)
+
+#### DDL
+
+```sql
+CREATE TABLE Doctor(
+    doctor_id INTEGER PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    specialty VARCHAR(100),
+    phone VARCHAR(15),
+    street VARCHAR(100),
+    city VARCHAR(50),
+    state VARCHAR(2)
+)
+```
+
 ### Drug
 
 Pharmaceutical product sold by the pharmacy and produced by a manufacturer.
@@ -211,11 +233,11 @@ CREATE TABLE PharmacySells(
 )
 ```
 
-### Prescribes (Pharmacist prescribes Drug to Patient) - Ternary M:M:M
+### Prescribes (Doctor prescribes Drug to Patient) / Dispenses (Pharmacist dispenses)
 
 #### Logical Schema
 
-Prescription(<u>prescription_id</u>, pharmacist_id, patient_id, drug_id,
+Prescription(<u>prescription_id</u>, doctor_id, pharmacist_id, patient_id, drug_id,
 prescription_date, quantity)
 
 #### DDL
@@ -223,11 +245,13 @@ prescription_date, quantity)
 ```sql
 CREATE TABLE Prescription(
     prescription_id INTEGER PRIMARY KEY,
+    doctor_id INTEGER NOT NULL,
     pharmacist_id INTEGER NOT NULL,
     patient_id INTEGER NOT NULL,
     drug_id INTEGER NOT NULL,
     prescription_date DATE NOT NULL,
     quantity INTEGER NOT NULL,
+    FOREIGN KEY (doctor_id) REFERENCES Doctor(doctor_id),
     FOREIGN KEY (pharmacist_id) REFERENCES Pharmacist(employee_id),
     FOREIGN KEY (patient_id) REFERENCES Patient(patient_id),
     FOREIGN KEY (drug_id) REFERENCES Drug(drug_id)
@@ -274,9 +298,9 @@ CREATE TABLE PharmacyContract(
 3. **Derived Attribute** `age` can be calculated from `birthday` at query time,
    so it's not stored.
 
-4. **Ternary Relationship** The `Prescribes` relationship connects
-   `Pharmacist`, `Patient`, and `Drug`. Created a `Prescription` table with a
-   surrogate key for easier referencing.
+4. **Prescription** A `Doctor` prescribes a `Drug` to a `Patient`, and a
+   `Pharmacist` dispenses it. Created a `Prescription` table with a surrogate
+   key for easier referencing.
 
 5. **Primary Keys** Used `INTEGER` for all primary keys for simplicity. In a
    real system, you might use auto-incrementing integers or UUIDs.
