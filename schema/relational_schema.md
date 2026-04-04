@@ -185,14 +185,14 @@ CREATE TABLE DrugManufacturer(
 -- Attribute shift_time included as attribute in `Employee` table
 ```
 
-### Has (Pharmacist has Patients) - 1M
+### Has (Pharmacist has Patients) - 1:M
 
 ```sql
--- 1M relationship one pharmacist has many patients
+-- 1:M relationship one pharmacist has many patients
 -- Captured by `primary_pharmacist_id` foreign key in `Patient` table
 ```
 
-### Sells (Pharmacy sells Drugs) - MM
+### Sells (Pharmacy sells Drugs) - M:M
 
 #### Logical Schema
 
@@ -211,7 +211,7 @@ CREATE TABLE PharmacySells(
 )
 ```
 
-### Prescribes (Pharmacist prescribes Drug to Patient) - Ternary MMM
+### Prescribes (Pharmacist prescribes Drug to Patient) - Ternary M:M:M
 
 #### Logical Schema
 
@@ -234,13 +234,13 @@ CREATE TABLE Prescription(
 )
 ```
 
-### Manufactures (DrugManufacturer manufactures Drug) - 1M
+### Manufactures (DrugManufacturer manufactures Drug) - 1:M
 
 ```sql
 -- Already captured by manufacturer_id foreign key in Drug table
 ```
 
-### Contracts (Pharmacy contracts with DrugManufacturer) - MM
+### Contracts (Pharmacy contracts with DrugManufacturer) - M:M
 
 #### Logical Schema
 
