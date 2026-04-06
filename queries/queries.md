@@ -6,6 +6,15 @@ Find all patients who have received prescriptions written by at least two
 different doctors. Show the patient name and how many distinct doctors have
 prescribed to them.
 
+'''sql
+SELECT patient.name, COUNT(DISTINCT doctor.name) as num_doctors
+FROM Prescription
+JOIN Patient ON Prescription.patient_id = Patient.patient_id
+JOIN Doctor ON Prescription.doctor_id = Doctor.doctor_id
+GROUP BY patient.name 
+HAVING num_doctors >= 2;
+'''
+
 ## 2. Most commonly prescribed drug per doctor specialty
 
 For each doctor specialty, find the drug that appears most often in
