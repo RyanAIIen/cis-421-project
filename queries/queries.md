@@ -207,6 +207,16 @@ ORDER BY Patient.name;
 Increase the selling price by 10% for all drugs manufactured by AstraZeneca
 across every pharmacy that carries them.
 
+```sql
+UPDATE PharmacySells
+SET price = ROUND(price * 1.10, 2)
+WHERE drug_id IN (
+    SELECT Drug.drug_id FROM Drug
+    JOIN DrugManufacturer ON Drug.manufacturer_id = DrugManufacturer.manufacturer_id
+    WHERE DrugManufacturer.name = 'AstraZeneca'
+);
+```
+
 ## 13. Transfer an employee to a different pharmacy
 
 Move employee 'Laura Martinez' from her current pharmacy to 'MediTrust Pharmacy'

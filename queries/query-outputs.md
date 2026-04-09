@@ -177,3 +177,18 @@
 | patient     | primary_pharmacist | pharmacy          |
 | :---------- | :----------------- | :---------------- |
 | Fiona Grant | Laura Martinez     | CareWell Pharmacy |
+
+## 12
+
+Prices updated +10% for all AstraZeneca drugs across all pharmacies carrying
+them.
+
+| trade_name   | pharmacy_id | price (after) |
+| :----------- | :---------- | :------------ |
+| Metoprolol   | 1           | 13.74         |
+| Omeprazole   | 2           | 17.59         |
+| Albuterol    | 3           | 24.19         |
+| Rosuvastatin | 3           | 34.64         |
+| Omeprazole   | 4           | 16.49         |
+| Albuterol    | 4           | 23.09         |
+| Metoprolol   | 4           | 12.64         |
