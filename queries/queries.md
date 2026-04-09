@@ -181,3 +181,20 @@ across every pharmacy that carries them.
 
 Move employee 'Laura Martinez' from her current pharmacy to 'MediTrust Pharmacy'
 and update her shift to 'Morning'.
+
+## 14. Pharmacists licensed to dispense controlled substances
+
+List all pharmacists who have dispensed at least one controlled substance, along
+with their license number, pharmacy, and the controlled drugs they dispensed.
+
+```sql
+SELECT DISTINCT Employee.name AS pharmacist, Pharmacist.license_number,
+    Pharmacy.name AS pharmacy, Drug.trade_name AS controlled_drug
+FROM Pharmacist
+JOIN Employee ON Pharmacist.employee_id = Employee.employee_id
+JOIN Pharmacy ON Employee.pharmacy_id = Pharmacy.pharmacy_id
+JOIN Prescription ON Pharmacist.employee_id = Prescription.pharmacist_id
+JOIN Drug ON Prescription.drug_id = Drug.drug_id
+WHERE Drug.controlled_substance = 1
+ORDER BY Employee.name, Drug.trade_name;
+```
