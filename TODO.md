@@ -88,15 +88,28 @@ Specific examples:
 9. Expiring licenses (if implemented)
 10. Most commonly prescribed drugs
 
-## Work Division
+## Django Admin UI (Ryan)
 
-Discuss with partner:
+A lightweight Django app pointing at `PharmacyDB.db` for a polished demo.
+Ryan is handling this — Gavin can jump in if he has bandwidth.
 
-- By phase? (design vs implementation)
-- By component? (split entities/queries)
-- Mixed? (collaborate on design, split execution)
+### Steps:
 
-Document: who designed what, who wrote which queries, how we collaborated
+- [ ] Set up Django project (`django-admin startproject pharmacydb`)
+- [ ] Create a Django app (`python manage.py startapp pharmacy`)
+- [ ] Point `settings.py` at the existing `PharmacyDB.db` file
+- [ ] Run `python manage.py inspectdb` and clean up generated models
+- [ ] Register all 12 models in `admin.py` with sensible `list_display`,
+      `search_fields`, and `list_filter` options
+- [ ] Verify CRUD works for all tables in the admin
+- [ ] Create a superuser for the demo
+
+### Notes:
+
+- Use `managed = False` on all models (don't let Django touch the existing schema)
+- The IS-A hierarchy (Employee → Pharmacist/Technician) may need
+  `OneToOneField` instead of the auto-generated FK — check inspectdb output
+- No custom views or query UI needed — basic admin CRUD is sufficient
 
 ## Timeline
 
