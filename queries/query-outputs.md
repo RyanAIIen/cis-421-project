@@ -147,3 +147,27 @@
 | Frank Miller    | QuickScript Pharmacy | 3             |
 | Ian Cooper      | GreenLeaf Pharmacy   | 3             |
 | Laura Martinez  | CareWell Pharmacy    | 2             |
+
+## 10
+
+| patient      | doctor              | drug              | pharmacist     | date       | quantity |
+| :----------- | :------------------ | :---------------- | :------------- | :--------- | :------- |
+| Ivan Cruz    | Dr. James Wilson    | Aspirin           | Emma Davis     | 2026-02-25 | 30       |
+| Diana Ross   | Dr. Sarah Kim       | Furosemide        | Emma Davis     | 2026-02-21 | 60       |
+| Paula West   | Dr. Maria Garcia    | Metformin         | Carol White    | 2026-02-18 | 90       |
+| Lana Morris  | Dr. Kevin Park      | Fluticasone       | Emma Davis     | 2026-02-17 | 30       |
+| Tom Clark    | Dr. Robert Chen     | Pantoprazole      | Carol White    | 2026-02-14 | 30       |
+| George Bell  | Dr. James Wilson    | Meloxicam         | Emma Davis     | 2026-02-13 | 15       |
+| Kyle Adams   | Dr. Lisa Patel      | Duloxetine        | Carol White    | 2026-02-10 | 60       |
+| Marcus Young | Dr. Thomas Reed     | Omeprazole        | Frank Miller   | 2026-02-10 | 90       |
+| Amy Chen     | Dr. Thomas Reed     | Rosuvastatin      | Emma Davis     | 2026-02-09 | 30       |
+| Fiona Grant  | Dr. Angela Foster   | Carvedilol        | Carol White    | 2026-02-06 | 30       |
+| Mike Lee     | Dr. Sarah Kim       | Montelukast       | Emma Davis     | 2026-02-05 | 60       |
+| Helen Park   | Dr. Angela Foster   | Metoprolol        | Frank Miller   | 2026-02-04 | 30       |
+| Oscar Diaz   | Dr. Robert Chen     | Metoprolol        | Laura Martinez | 2026-02-03 | 30       |
+| Jane Roe     | Dr. James Wilson    | Simvastatin       | Carol White    | 2026-02-02 | 90       |
+| Jenny Liu    | Dr. Lisa Patel      | Prednisone        | Laura Martinez | 2026-02-01 | 10       |
+| Lana Morris  | Dr. James Wilson    | Trazodone         | Emma Davis     | 2026-02-01 | 30       |
+| Diana Ross   | Dr. Angela Foster   | Carvedilol        | Ian Cooper     | 2026-02-01 | 30       |
+| Brian Hall   | Dr. Kevin Park      | Clopidogrel       | Frank Miller   | 2026-01-29 | 30       |
+| Paula West   | Dr. Kevin Park      | Tramadol          | Carol White    | 2026-01-27 | 15       |

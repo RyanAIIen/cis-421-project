@@ -167,6 +167,21 @@ List all prescriptions filled within 30 days of the most recent prescription
 date in the database. Show patient name, doctor name, drug name, pharmacist
 name, date, and quantity.
 
+```sql
+SELECT Patient.name AS patient, Doctor.name AS doctor, Drug.trade_name AS drug,
+    Employee.name AS pharmacist, Prescription.prescription_date AS date,
+    Prescription.quantity
+FROM Prescription
+JOIN Patient ON Prescription.patient_id = Patient.patient_id
+JOIN Doctor ON Prescription.doctor_id = Doctor.doctor_id
+JOIN Drug ON Prescription.drug_id = Drug.drug_id
+JOIN Employee ON Prescription.pharmacist_id = Employee.employee_id
+WHERE Prescription.prescription_date >= DATE(
+    (SELECT MAX(prescription_date) FROM Prescription), '-30 days'
+)
+ORDER BY Prescription.prescription_date DESC;
+```
+
 ## 11. Patients whose primary pharmacist has never dispensed to them
 
 Find patients whose assigned primary pharmacist has not dispensed any of their
