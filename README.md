@@ -1,21 +1,31 @@
-# CIS-421 Project
+# CIS-421 Project — Pharmacy Database
 
-A database design and SQL project for CIS-421, intended to model a real-world enterprise, define an ER model, implement a relational schema, load sample data, and write SQL queries/updates.
+A database design and SQL project for CIS-421 modeling a regional pharmacy
+chain. Includes ER diagram, relational schema, SQLite database, 14 SQL queries,
+and a Django admin UI for live data browsing.
 
-Project requirements and deliverables are described in [INSTRUCTIONS.md](INSTRUCTIONS.md).
+Project requirements are described in [INSTRUCTIONS.md](INSTRUCTIONS.md).
 
 ## Project Structure
 
-- data/: sample data loads and seed scripts
-- docs/: ER diagram(s) and report
-- schema/: DDL for tables, constraints, and indexes
-- queries/: SQL queries/updates with brief descriptions
+- `PharmacyDB.db` — SQLite database
+- `schema/` — relational schema (DDL) and sample data insert statements
+- `queries/` — 14 SQL queries/updates with descriptions and outputs
+- `docs/` — ER diagram, presentation outline, report outline
+- `web/` — Django admin UI
 
-## TODO
+## Running the Web UI
 
-1. Choose an enterprise and document requirements.
-2. Produce an ER diagram and derive the relational schema.
-3. Implement the schema in a target DBMS (Oracle or SQLite).
-4. Load sample data and validate constraints.
-5. Write and verify SQL queries/updates; store them in a predictable folder.
-6. Capture outputs for the report and presentation.
+Requires Python 3.10+.
+
+```bash
+cd web
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py createsuperuser
+python manage.py runserver
+```
+
+Then open http://127.0.0.1:8000/admin and log in with the superuser credentials.
