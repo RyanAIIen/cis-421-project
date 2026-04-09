@@ -1,6 +1,7 @@
 ## Insert Statements
 
 ### Pharmacy
+
 ```sql
 INSERT INTO Pharmacy VALUES (1, 'HealthPlus Pharmacy', '123 Main St', 'Dearborn', 'MI', '3135551000');
 INSERT INTO Pharmacy VALUES (2, 'CareWell Pharmacy', '456 Oak Ave', 'Detroit', 'MI', '3135552000');
@@ -10,6 +11,7 @@ INSERT INTO Pharmacy VALUES (5, 'GreenLeaf Pharmacy', '555 Michigan Ave', 'Lansi
 ```
 
 ### DrugManufacturer
+
 ```sql
 INSERT INTO DrugManufacturer VALUES (1, 'Pfizer', '100 Pharma St', 'New York', 'NY');
 INSERT INTO DrugManufacturer VALUES (2, 'Moderna', '200 Bio Ave', 'Cambridge', 'MA');
@@ -22,6 +24,7 @@ INSERT INTO DrugManufacturer VALUES (8, 'Eli Lilly', '893 Delaware St', 'Indiana
 ```
 
 ### Employee
+
 ```sql
 INSERT INTO Employee VALUES (1, 1, 'Alice Smith', '12 Elm St', 'Dearborn', 'MI', '1985-04-12', 'Pharmacist', 'Morning');
 INSERT INTO Employee VALUES (2, 1, 'Bob Johnson', '34 Maple St', 'Dearborn', 'MI', '1990-07-19', 'Technician', 'Evening');
@@ -41,16 +44,18 @@ INSERT INTO Employee VALUES (15, 5, 'Paul Washington', '72 Saginaw St', 'Lansing
 ```
 
 ### Pharmacist
+
 ```sql
-INSERT INTO Pharmacist VALUES (1, 'PharmD');
-INSERT INTO Pharmacist VALUES (3, 'PharmD');
-INSERT INTO Pharmacist VALUES (5, 'PharmD');
-INSERT INTO Pharmacist VALUES (7, 'PharmD');
-INSERT INTO Pharmacist VALUES (9, 'PharmD');
-INSERT INTO Pharmacist VALUES (12, 'RPh');
+INSERT INTO Pharmacist VALUES (1, 'PharmD', 'RPH-MI-10001');
+INSERT INTO Pharmacist VALUES (3, 'PharmD', 'RPH-MI-10002');
+INSERT INTO Pharmacist VALUES (5, 'PharmD', 'RPH-MI-10003');
+INSERT INTO Pharmacist VALUES (7, 'PharmD', 'RPH-MI-10004');
+INSERT INTO Pharmacist VALUES (9, 'PharmD', 'RPH-MI-10005');
+INSERT INTO Pharmacist VALUES (12, 'RPh', 'RPH-MI-10006');
 ```
 
 ### PharmacyTechnician
+
 ```sql
 INSERT INTO PharmacyTechnician VALUES (2, 'Certified Technician');
 INSERT INTO PharmacyTechnician VALUES (4, 'Registered Technician');
@@ -64,30 +69,32 @@ INSERT INTO PharmacyTechnician VALUES (15, 'Registered Technician');
 ```
 
 ### Patient
+
 ```sql
-INSERT INTO Patient VALUES (1, 'John Doe', 'M', 'BlueCross', '11 First St', 'Dearborn', 'MI', 1);
-INSERT INTO Patient VALUES (2, 'Jane Roe', 'F', 'Aetna', '22 Second St', 'Detroit', 'MI', 3);
-INSERT INTO Patient VALUES (3, 'Mike Lee', 'M', 'Cigna', '33 Third St', 'Ann Arbor', 'MI', 5);
-INSERT INTO Patient VALUES (4, 'Sara Kim', 'F', 'UnitedHealth', '44 Fourth St', 'Dearborn', 'MI', 1);
-INSERT INTO Patient VALUES (5, 'Tom Clark', 'M', 'Humana', '55 Fifth St', 'Detroit', 'MI', 3);
-INSERT INTO Patient VALUES (6, 'Amy Chen', 'F', 'BlueCross', '66 Sixth St', 'Ann Arbor', 'MI', 5);
-INSERT INTO Patient VALUES (7, 'Brian Hall', 'M', 'Aetna', '77 Seventh St', 'Ypsilanti', 'MI', 7);
-INSERT INTO Patient VALUES (8, 'Diana Ross', 'F', 'Cigna', '88 Eighth St', 'Lansing', 'MI', 9);
-INSERT INTO Patient VALUES (9, 'Eric Wong', 'M', 'UnitedHealth', '99 Ninth St', 'Dearborn', 'MI', 1);
-INSERT INTO Patient VALUES (10, 'Fiona Grant', 'F', 'Humana', '110 Tenth St', 'Detroit', 'MI', 12);
-INSERT INTO Patient VALUES (11, 'George Bell', 'M', 'BlueCross', '121 Lake Dr', 'Ann Arbor', 'MI', 5);
-INSERT INTO Patient VALUES (12, 'Helen Park', 'F', 'Aetna', '132 Hill Ave', 'Ypsilanti', 'MI', 7);
-INSERT INTO Patient VALUES (13, 'Ivan Cruz', 'M', 'Cigna', '143 Valley Rd', 'Lansing', 'MI', 9);
-INSERT INTO Patient VALUES (14, 'Jenny Liu', 'F', 'UnitedHealth', '154 Brook Ln', 'Dearborn', 'MI', 1);
-INSERT INTO Patient VALUES (15, 'Kyle Adams', 'M', 'Humana', '165 Ridge St', 'Detroit', 'MI', 3);
-INSERT INTO Patient VALUES (16, 'Lana Morris', 'F', 'BlueCross', '176 Elm Ct', 'Ann Arbor', 'MI', 5);
-INSERT INTO Patient VALUES (17, 'Marcus Young', 'M', 'Aetna', '187 Park Ave', 'Ypsilanti', 'MI', 7);
-INSERT INTO Patient VALUES (18, 'Nina Patel', 'F', 'Cigna', '198 Center St', 'Lansing', 'MI', 9);
-INSERT INTO Patient VALUES (19, 'Oscar Diaz', 'M', 'UnitedHealth', '209 Front St', 'Dearborn', 'MI', 12);
-INSERT INTO Patient VALUES (20, 'Paula West', 'F', 'Humana', '220 Back St', 'Detroit', 'MI', 3);
+INSERT INTO Patient VALUES (1, 'John Doe', 'M', 'BlueCross', '1978-03-15', '11 First St', 'Dearborn', 'MI', 1);
+INSERT INTO Patient VALUES (2, 'Jane Roe', 'F', 'Aetna', '1990-07-22', '22 Second St', 'Detroit', 'MI', 3);
+INSERT INTO Patient VALUES (3, 'Mike Lee', 'M', 'Cigna', '1985-11-08', '33 Third St', 'Ann Arbor', 'MI', 5);
+INSERT INTO Patient VALUES (4, 'Sara Kim', 'F', 'UnitedHealth', '1972-04-30', '44 Fourth St', 'Dearborn', 'MI', 1);
+INSERT INTO Patient VALUES (5, 'Tom Clark', 'M', 'Humana', '1965-09-17', '55 Fifth St', 'Detroit', 'MI', 3);
+INSERT INTO Patient VALUES (6, 'Amy Chen', 'F', 'BlueCross', '1993-01-25', '66 Sixth St', 'Ann Arbor', 'MI', 5);
+INSERT INTO Patient VALUES (7, 'Brian Hall', 'M', 'Aetna', '1980-06-12', '77 Seventh St', 'Ypsilanti', 'MI', 7);
+INSERT INTO Patient VALUES (8, 'Diana Ross', 'F', 'Cigna', '1955-12-03', '88 Eighth St', 'Lansing', 'MI', 9);
+INSERT INTO Patient VALUES (9, 'Eric Wong', 'M', 'UnitedHealth', '1988-02-19', '99 Ninth St', 'Dearborn', 'MI', 1);
+INSERT INTO Patient VALUES (10, 'Fiona Grant', 'F', 'Humana', '1970-08-07', '110 Tenth St', 'Detroit', 'MI', 12);
+INSERT INTO Patient VALUES (11, 'George Bell', 'M', 'BlueCross', '1962-05-28', '121 Lake Dr', 'Ann Arbor', 'MI', 5);
+INSERT INTO Patient VALUES (12, 'Helen Park', 'F', 'Aetna', '1995-10-14', '132 Hill Ave', 'Ypsilanti', 'MI', 7);
+INSERT INTO Patient VALUES (13, 'Ivan Cruz', 'M', 'Cigna', '1983-03-09', '143 Valley Rd', 'Lansing', 'MI', 9);
+INSERT INTO Patient VALUES (14, 'Jenny Liu', 'F', 'UnitedHealth', '1991-07-16', '154 Brook Ln', 'Dearborn', 'MI', 1);
+INSERT INTO Patient VALUES (15, 'Kyle Adams', 'M', 'Humana', '1975-11-21', '165 Ridge St', 'Detroit', 'MI', 3);
+INSERT INTO Patient VALUES (16, 'Lana Morris', 'F', 'BlueCross', '1987-04-05', '176 Elm Ct', 'Ann Arbor', 'MI', 5);
+INSERT INTO Patient VALUES (17, 'Marcus Young', 'M', 'Aetna', '1968-09-30', '187 Park Ave', 'Ypsilanti', 'MI', 7);
+INSERT INTO Patient VALUES (18, 'Nina Patel', 'F', 'Cigna', '1992-01-13', '198 Center St', 'Lansing', 'MI', 9);
+INSERT INTO Patient VALUES (19, 'Oscar Diaz', 'M', 'UnitedHealth', '1959-06-24', '209 Front St', 'Dearborn', 'MI', 12);
+INSERT INTO Patient VALUES (20, 'Paula West', 'F', 'Humana', '1977-02-18', '220 Back St', 'Detroit', 'MI', 3);
 ```
 
 ### PatientPhone
+
 ```sql
 INSERT INTO PatientPhone VALUES (1, '3131111111');
 INSERT INTO PatientPhone VALUES (1, '3131112222');
@@ -118,40 +125,42 @@ INSERT INTO PatientPhone VALUES (20, '3131110020');
 ```
 
 ### Drug
+
 ```sql
-INSERT INTO Drug VALUES (1, 'Aspirin', 1, 100);
-INSERT INTO Drug VALUES (2, 'Ibuprofen', 2, 200);
-INSERT INTO Drug VALUES (3, 'Amoxicillin', 3, 150);
-INSERT INTO Drug VALUES (4, 'Metformin', 1, 120);
-INSERT INTO Drug VALUES (5, 'Lisinopril', 2, 180);
-INSERT INTO Drug VALUES (6, 'Atorvastatin', 1, 250);
-INSERT INTO Drug VALUES (7, 'Amlodipine', 1, 90);
-INSERT INTO Drug VALUES (8, 'Omeprazole', 7, 160);
-INSERT INTO Drug VALUES (9, 'Losartan', 5, 140);
-INSERT INTO Drug VALUES (10, 'Albuterol', 7, 75);
-INSERT INTO Drug VALUES (11, 'Gabapentin', 1, 110);
-INSERT INTO Drug VALUES (12, 'Hydrochlorothiazide', 5, 200);
-INSERT INTO Drug VALUES (13, 'Sertraline', 1, 130);
-INSERT INTO Drug VALUES (14, 'Simvastatin', 5, 170);
-INSERT INTO Drug VALUES (15, 'Montelukast', 5, 85);
-INSERT INTO Drug VALUES (16, 'Escitalopram', 8, 95);
-INSERT INTO Drug VALUES (17, 'Rosuvastatin', 7, 60);
-INSERT INTO Drug VALUES (18, 'Levothyroxine', 4, 300);
-INSERT INTO Drug VALUES (19, 'Pantoprazole', 6, 140);
-INSERT INTO Drug VALUES (20, 'Furosemide', 6, 190);
-INSERT INTO Drug VALUES (21, 'Prednisone', 1, 220);
-INSERT INTO Drug VALUES (22, 'Tramadol', 3, 80);
-INSERT INTO Drug VALUES (23, 'Tamsulosin', 4, 70);
-INSERT INTO Drug VALUES (24, 'Clopidogrel', 8, 110);
-INSERT INTO Drug VALUES (25, 'Carvedilol', 6, 130);
-INSERT INTO Drug VALUES (26, 'Trazodone', 3, 150);
-INSERT INTO Drug VALUES (27, 'Metoprolol', 7, 240);
-INSERT INTO Drug VALUES (28, 'Duloxetine', 8, 100);
-INSERT INTO Drug VALUES (29, 'Meloxicam', 4, 160);
-INSERT INTO Drug VALUES (30, 'Fluticasone', 6, 55);
+INSERT INTO Drug VALUES (1, 'Aspirin', 1, 100, 0);
+INSERT INTO Drug VALUES (2, 'Ibuprofen', 2, 200, 0);
+INSERT INTO Drug VALUES (3, 'Amoxicillin', 3, 150, 0);
+INSERT INTO Drug VALUES (4, 'Metformin', 1, 120, 0);
+INSERT INTO Drug VALUES (5, 'Lisinopril', 2, 180, 0);
+INSERT INTO Drug VALUES (6, 'Atorvastatin', 1, 250, 0);
+INSERT INTO Drug VALUES (7, 'Amlodipine', 1, 90, 0);
+INSERT INTO Drug VALUES (8, 'Omeprazole', 7, 160, 0);
+INSERT INTO Drug VALUES (9, 'Losartan', 5, 140, 0);
+INSERT INTO Drug VALUES (10, 'Albuterol', 7, 75, 0);
+INSERT INTO Drug VALUES (11, 'Gabapentin', 1, 110, 1);
+INSERT INTO Drug VALUES (12, 'Hydrochlorothiazide', 5, 200, 0);
+INSERT INTO Drug VALUES (13, 'Sertraline', 1, 130, 0);
+INSERT INTO Drug VALUES (14, 'Simvastatin', 5, 170, 0);
+INSERT INTO Drug VALUES (15, 'Montelukast', 5, 85, 0);
+INSERT INTO Drug VALUES (16, 'Escitalopram', 8, 95, 0);
+INSERT INTO Drug VALUES (17, 'Rosuvastatin', 7, 60, 0);
+INSERT INTO Drug VALUES (18, 'Levothyroxine', 4, 300, 0);
+INSERT INTO Drug VALUES (19, 'Pantoprazole', 6, 140, 0);
+INSERT INTO Drug VALUES (20, 'Furosemide', 6, 190, 0);
+INSERT INTO Drug VALUES (21, 'Prednisone', 1, 220, 0);
+INSERT INTO Drug VALUES (22, 'Tramadol', 3, 80, 1);
+INSERT INTO Drug VALUES (23, 'Tamsulosin', 4, 70, 0);
+INSERT INTO Drug VALUES (24, 'Clopidogrel', 8, 110, 0);
+INSERT INTO Drug VALUES (25, 'Carvedilol', 6, 130, 0);
+INSERT INTO Drug VALUES (26, 'Trazodone', 3, 150, 1);
+INSERT INTO Drug VALUES (27, 'Metoprolol', 7, 240, 0);
+INSERT INTO Drug VALUES (28, 'Duloxetine', 8, 100, 0);
+INSERT INTO Drug VALUES (29, 'Meloxicam', 4, 160, 0);
+INSERT INTO Drug VALUES (30, 'Fluticasone', 6, 55, 0);
 ```
 
 ### Doctor
+
 ```sql
 INSERT INTO Doctor VALUES (1, 'Dr. Robert Chen', 'Cardiology', '3139991001', '200 Medical Dr', 'Dearborn', 'MI');
 INSERT INTO Doctor VALUES (2, 'Dr. Lisa Patel', 'Family Medicine', '3139991002', '210 Health Ave', 'Detroit', 'MI');
@@ -164,6 +173,7 @@ INSERT INTO Doctor VALUES (8, 'Dr. Angela Foster', 'Gastroenterology', '31399910
 ```
 
 ### PharmacySells
+
 ```sql
 INSERT INTO PharmacySells VALUES (1, 1, 5.99);
 INSERT INTO PharmacySells VALUES (1, 2, 7.49);
@@ -218,6 +228,7 @@ INSERT INTO PharmacySells VALUES (5, 29, 12.99);
 ```
 
 ### Prescription
+
 ```sql
 -- Pharmacy 1 (pharmacists 1, 12) sells drugs: 1,2,4,6,7,11,13,18,21,27
 INSERT INTO Prescription VALUES (1, 1, 1, 1, 1, '2026-01-10', 30);
@@ -267,6 +278,7 @@ INSERT INTO Prescription VALUES (40, 8, 9, 8, 25, '2026-02-01', 30);
 ```
 
 ### PharmacyContract
+
 ```sql
 INSERT INTO PharmacyContract VALUES (1, 1, '2025-01-01', '2026-01-01');
 INSERT INTO PharmacyContract VALUES (1, 2, '2025-02-01', '2026-02-01');

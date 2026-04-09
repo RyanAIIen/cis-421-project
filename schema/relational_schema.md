@@ -58,7 +58,7 @@ dispense prescriptions.
 
 #### Logical Schema
 
-Pharmacist(<u>employee_id</u>, degree)
+Pharmacist(<u>employee_id</u>, degree, license_number)
 
 #### DDL
 
@@ -66,6 +66,7 @@ Pharmacist(<u>employee_id</u>, degree)
 CREATE TABLE Pharmacist(
     employee_id INTEGER PRIMARY KEY,
     degree VARCHAR(100),
+    license_number VARCHAR(20) UNIQUE,
     FOREIGN KEY (employee_id) REFERENCES Employee(employee_id) ON DELETE CASCADE
 )
 ```
@@ -96,7 +97,7 @@ pharmacy.
 
 #### Logical Schema
 
-Patient(<u>patient_id</u>, name, sex, insurance, street, city, state,
+Patient(<u>patient_id</u>, name, sex, insurance, birthday, street, city, state,
 primary_pharmacist_id)
 
 #### DDL
@@ -107,6 +108,7 @@ CREATE TABLE Patient(
     name VARCHAR(100) NOT NULL,
     sex CHAR(1) CHECK (sex IN ('M', 'F', 'O')),
     insurance VARCHAR(100),
+    birthday DATE,
     street VARCHAR(100),
     city VARCHAR(50),
     state VARCHAR(2),
@@ -163,7 +165,8 @@ Pharmaceutical product sold by the pharmacy and produced by a manufacturer.
 
 #### Logical Schema
 
-Drug(<u>drug_id</u>, trade_name, manufacturer_id)
+Drug(<u>drug_id</u>, trade_name, manufacturer_id, quantity,
+controlled_substance)
 
 #### DDL
 
@@ -173,6 +176,7 @@ CREATE TABLE Drug(
     trade_name VARCHAR(100) NOT NULL,
     manufacturer_id INTEGER NOT NULL,
     quantity INTEGER NOT NULL,
+    controlled_substance INTEGER NOT NULL DEFAULT 0 CHECK (controlled_substance IN (0, 1)),
     FOREIGN KEY (manufacturer_id) REFERENCES DrugManufacturer(manufacturer_id)
 )
 ```
@@ -237,8 +241,8 @@ CREATE TABLE PharmacySells(
 
 #### Logical Schema
 
-Prescription(<u>prescription_id</u>, doctor_id, pharmacist_id, patient_id, drug_id,
-prescription_date, quantity)
+Prescription(<u>prescription_id</u>, doctor_id, pharmacist_id, patient_id,
+drug_id, prescription_date, quantity)
 
 #### DDL
 
