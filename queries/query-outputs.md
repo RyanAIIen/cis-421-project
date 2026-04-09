@@ -200,3 +200,13 @@ Laura Martinez transferred to MediTrust Pharmacy, shift updated to Morning.
 | name           | pharmacy           | shift_time |
 | :------------- | :----------------- | :--------- |
 | Laura Martinez | MediTrust Pharmacy | Morning    |
+
+## 14
+
+| pharmacist  | license_number | pharmacy            | controlled_drug |
+| :---------- | :------------- | :------------------ | :-------------- |
+| Alice Smith | RPH-MI-10001   | HealthPlus Pharmacy | Gabapentin      |
+| Carol White | RPH-MI-10002   | CareWell Pharmacy   | Tramadol        |
+| Emma Davis  | RPH-MI-10003   | MediTrust Pharmacy  | Trazodone       |
+| Ian Cooper  | RPH-MI-10005   | GreenLeaf Pharmacy  | Gabapentin      |
+| Ian Cooper  | RPH-MI-10005   | GreenLeaf Pharmacy  | Tramadol        |
