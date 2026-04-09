@@ -171,3 +171,9 @@
 | Diana Ross   | Dr. Angela Foster | Carvedilol   | Ian Cooper     | 2026-02-01 | 30       |
 | Brian Hall   | Dr. Kevin Park    | Clopidogrel  | Frank Miller   | 2026-01-29 | 30       |
 | Paula West   | Dr. Kevin Park    | Tramadol     | Carol White    | 2026-01-27 | 15       |
+
+## 11
+
+| patient     | primary_pharmacist | pharmacy          |
+| :---------- | :----------------- | :---------------- |
+| Fiona Grant | Laura Martinez     | CareWell Pharmacy |

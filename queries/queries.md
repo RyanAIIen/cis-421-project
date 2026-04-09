@@ -187,6 +187,21 @@ ORDER BY Prescription.prescription_date DESC;
 Find patients whose assigned primary pharmacist has not dispensed any of their
 prescriptions. Show patient name, primary pharmacist name, and pharmacy.
 
+```sql
+SELECT Patient.name AS patient, Employee.name AS primary_pharmacist,
+    Pharmacy.name AS pharmacy
+FROM Patient
+JOIN Pharmacist ON Patient.primary_pharmacist_id = Pharmacist.employee_id
+JOIN Employee ON Pharmacist.employee_id = Employee.employee_id
+JOIN Pharmacy ON Employee.pharmacy_id = Pharmacy.pharmacy_id
+WHERE NOT EXISTS (
+    SELECT * FROM Prescription
+    WHERE Prescription.patient_id = Patient.patient_id
+    AND Prescription.pharmacist_id = Patient.primary_pharmacist_id
+)
+ORDER BY Patient.name;
+```
+
 ## 12. Update drug prices by manufacturer
 
 Increase the selling price by 10% for all drugs manufactured by AstraZeneca
