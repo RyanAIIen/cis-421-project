@@ -10,23 +10,44 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
+import os
 from pathlib import Path
+from dotenv import dotenv_values
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+
+def split_env(env, delimiter=','):
+    return env.split(delimiter) if env else []
+
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+envs = {
+    'CI': 'ci',
+    'DEV': 'development',
+    'PROD': 'production',
+}
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
+CI = os.getenv('GITHUB_WORKFLOW')
+ENVIRONMENT = envs['CI'] if CI else os.getenv('ENVIRONMENT', envs['DEV'])
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-+aq#05@o-&x%d76w3miz+-kq$q)aix!5gf$el*nuo=g-sq$ayl"
+config = (
+    {
+        **dotenv_values(".env.dev"),  # allowed in version control
+        **dotenv_values(".env.dev-secret"),  # not allowed in version control
+        **os.environ,
+    }
+    if ENVIRONMENT == envs['DEV']
+    else os.environ
+)
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+SECRET_KEY = config.get('SECRET_KEY')
+if not SECRET_KEY and ENVIRONMENT in [envs['DEV'], envs['CI']]:
+    # NOT FOR PRODUCTION USE
+    SECRET_KEY = ("One sometimes finds what one is not looking for")
 
-ALLOWED_HOSTS = []
+DEBUG = config.get('DEBUG') == 'True'
 
+ALLOWED_HOSTS = split_env(config.get('ALLOWED_HOSTS'))
 
 # Application definition
 
@@ -99,6 +120,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_SUPERUSER_EMAIL = config.get('AUTH_SUPERUSER_EMAIL')
+AUTH_SUPERUSER_PASSWORD = config.get('AUTH_SUPERUSER_PASSWORD')
 
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
