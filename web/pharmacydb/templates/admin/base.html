@@ -1,0 +1,25 @@
+{% extends 'admin/base.html' %} {% load i18n %} {% block userlinks %}
+<a href="{% url 'admin:password_change' %}"
+  >{% translate 'Change password' %}</a
+>
+/
+<a href="{% url 'admin:logout' %}">{% translate 'Log out' %}</a>
+{% endblock %} {% block extrastyle %} {{ block.super }}
+<style>
+  html[data-theme="light"],
+  :root {
+    --primary: #fff;
+    --secondary: #3d5a7a;
+    --accent: #c9944e;
+    --muted: #6b7280;
+    --background: #fafbfc;
+    --surface: #f3f4f6;
+    --text: #1f2937;
+    --header-color: var(--primary);
+    --selected-row: #e3f2ed;
+    --danger: #b84644;
+    --success: #2f7d47;
+    --focus: #5a9bc7;
+  }
+</style>
+{% endblock %}

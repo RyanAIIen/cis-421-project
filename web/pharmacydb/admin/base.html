@@ -1,0 +1,40 @@
+{% extends 'admin/base.html' %} {% block userlinks %}
+<a href="{% url 'admin:password_change' %}"
+  >{% translate 'Change password' %}</a
+>
+/
+<a href="{% url 'admin:logout' %}">{% translate 'Log out' %}</a>
+{% endblock %} {% block extrastyle %} {{ block.super }}
+<style>
+  html[data-theme="light"],
+  :root {
+    --primary: #0b3d91;
+    --secondary: #0a6b4f;
+    --accent: #ffc72c;
+    --muted: #6b7280;
+    --background: #ffffff;
+    --surface: #f7fafb;
+    --text: #0f1724;
+    --header-color: var(--primary);
+    --selected-row: #e6f7f2;
+    --danger: #d9534f;
+    --success: #198754;
+    --focus: #99d6ff;
+  }
+
+  html[data-theme="dark"] {
+    --primary: #9ec8ff;
+    --secondary: #8be0c9;
+    --accent: #ffda71;
+    --muted: #9aa4b2;
+    --background: #0b1220;
+    --surface: #0f1724;
+    --text: #e6eef6;
+    --header-color: var(--primary);
+    --selected-row: #063c34;
+    --danger: #ff6b6b;
+    --success: #4bd18b;
+    --focus: #005f9e;
+  }
+</style>
+{% endblock %}
