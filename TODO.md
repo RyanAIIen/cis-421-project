@@ -2,13 +2,6 @@
 
 ## Remaining Work
 
-### Queries
-
-- [ ] Write SQL for queries 10–13 (Ryan)
-- [ ] Add output results for queries 10–14 to `Query Outputs.md`
-- [ ] Queries 6 and 7 have been reframed — Gavin's SQL in `queries.md` needs
-      updating to match the new descriptions
-
 ### ER Diagram
 
 - [ ] Update ER diagram in Lucidchart to reflect all changes since original:
