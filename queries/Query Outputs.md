@@ -82,11 +82,29 @@
 | Jenny Liu | 2 |
 | Nina Patel | 2 |
 
-## 6 
-NULL
+## 6
+| name | pharmacy_count |
+| :--- | :--- |
+| Dr. Angela Foster | 3 |
+| Dr. James Wilson | 3 |
+| Dr. Kevin Park | 3 |
+| Dr. Maria Garcia | 3 |
+| Dr. Thomas Reed | 3 |
 
 ## 7
-NULL
+| trade_name | manufacturer |
+| :--- | :--- |
+| Amlodipine | Pfizer |
+| Clopidogrel | Eli Lilly |
+| Duloxetine | Eli Lilly |
+| Hydrochlorothiazide | Merck |
+| Montelukast | Merck |
+| Pantoprazole | Novartis |
+| Prednisone | Pfizer |
+| Rosuvastatin | AstraZeneca |
+| Sertraline | Pfizer |
+| Tamsulosin | AbbVie |
+| Trazodone | Johnson & Johnson |
 
 ## 8
 | trade_name | lowest_price | highest_price | average_price |

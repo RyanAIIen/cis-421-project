@@ -94,34 +94,36 @@ GROUP BY Patient.patient_id
 HAVING phone_count > 1;
 ```
 
-## 6. Doctors who have prescribed to patients at every pharmacy
+## 6. Doctors who have prescribed at 3 or more pharmacies
 
-Find doctors whose prescriptions have been dispensed at all 5 pharmacies (via
-the pharmacist's employer). Show doctor name.
+Find doctors whose prescriptions have been dispensed at 3 or more distinct
+pharmacies (via the pharmacist's employer). Show doctor name and pharmacy count.
 
 ```sql
-SELECT Doctor.name
+SELECT Doctor.name, COUNT(DISTINCT Employee.pharmacy_id) AS pharmacy_count
 FROM Doctor
 JOIN Prescription ON Doctor.doctor_id = Prescription.doctor_id
 JOIN Employee ON Prescription.pharmacist_id = Employee.employee_id
 GROUP BY Doctor.doctor_id
-HAVING COUNT(DISTINCT Employee.pharmacy_id) = (SELECT COUNT(pharmacy_id) FROM Pharmacy);
+HAVING pharmacy_count >= 3
+ORDER BY pharmacy_count DESC, Doctor.name;
 ```
 
-## 7. Drugs never prescribed
+## 7. Drugs stocked at exactly one pharmacy
 
-Find all drugs in the database that do not appear in any prescription. Show
-drug name and manufacturer name.
+Find drugs carried by only a single pharmacy — useful for identifying exclusive
+or low-distribution medications. Show drug name and manufacturer.
 
 ```sql
-SELECT Drug.trade_name, DrugManufacturer.name
+SELECT Drug.trade_name, DrugManufacturer.name AS manufacturer
 FROM Drug
 JOIN DrugManufacturer ON Drug.manufacturer_id = DrugManufacturer.manufacturer_id
-WHERE NOT EXISTS (
-    SELECT *
-    FROM Prescription
-    WHERE Prescription.drug_id = Drug.drug_id
-);
+WHERE (
+    SELECT COUNT(DISTINCT PharmacySells.pharmacy_id)
+    FROM PharmacySells
+    WHERE PharmacySells.drug_id = Drug.drug_id
+) = 1
+ORDER BY Drug.trade_name;
 ```
 
 ## 8. Average drug price comparison across pharmacies
