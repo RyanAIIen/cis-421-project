@@ -192,3 +192,11 @@ them.
 | Omeprazole   | 4           | 16.49         |
 | Albuterol    | 4           | 23.09         |
 | Metoprolol   | 4           | 12.64         |
+
+## 13
+
+Laura Martinez transferred to MediTrust Pharmacy, shift updated to Morning.
+
+| name           | pharmacy           | shift_time |
+| :------------- | :----------------- | :--------- |
+| Laura Martinez | MediTrust Pharmacy | Morning    |

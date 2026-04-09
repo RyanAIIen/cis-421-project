@@ -222,6 +222,13 @@ WHERE drug_id IN (
 Move employee 'Laura Martinez' from her current pharmacy to 'MediTrust Pharmacy'
 and update her shift to 'Morning'.
 
+```sql
+UPDATE Employee
+SET pharmacy_id = (SELECT pharmacy_id FROM Pharmacy WHERE name = 'MediTrust Pharmacy'),
+    shift_time = 'Morning'
+WHERE name = 'Laura Martinez';
+```
+
 ## 14. Pharmacists licensed to dispense controlled substances
 
 List all pharmacists who have dispensed at least one controlled substance, along
