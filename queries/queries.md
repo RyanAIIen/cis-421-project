@@ -11,7 +11,7 @@ SELECT patient.name, COUNT(DISTINCT doctor.name) as num_doctors
 FROM Prescription
 JOIN Patient ON Prescription.patient_id = Patient.patient_id
 JOIN Doctor ON Prescription.doctor_id = Doctor.doctor_id
-GROUP BY patient.name 
+GROUP BY patient.name
 HAVING num_doctors >= 2;
 ```
 
@@ -21,13 +21,14 @@ For each doctor specialty, find the drug that appears most often in
 prescriptions. Show the specialty, drug name, and prescription count.
 
 ```sql
-CREATE VIEW doctor_prescription_summary AS 
+CREATE VIEW doctor_prescription_summary AS
 SELECT specialty, trade_name, COUNT(prescription.prescription_id) as num_prescriptions
 FROM doctor
 JOIN prescription ON Doctor.doctor_id = prescription.doctor_id
 JOIN drug ON prescription.drug_id = drug.drug_id
 GROUP BY specialty, trade_name;
 ```
+
 ```sql
 SELECT specialty, trade_name, num_prescriptions
 FROM doctor_prescription_summary AS main
@@ -75,7 +76,7 @@ SELECT Pharmacy.name, SUM(Prescription.quantity * PharmacySells.price) AS total_
 FROM Prescription
 JOIN Employee ON Prescription.pharmacist_id = Employee.employee_id
 JOIN Pharmacy ON Employee.pharmacy_id = Pharmacy.pharmacy_id
-JOIN PharmacySells ON Pharmacy.pharmacy_id = PharmacySells.pharmacy_id 
+JOIN PharmacySells ON Pharmacy.pharmacy_id = PharmacySells.pharmacy_id
     AND Prescription.drug_id = PharmacySells.drug_id
 GROUP BY Pharmacy.name
 ORDER BY total_revenue DESC;
@@ -132,8 +133,8 @@ For each drug sold by more than one pharmacy, show the drug name, lowest price,
 highest price, and average price across all pharmacies that carry it.
 
 ```sql
-SELECT 
-    Drug.trade_name, 
+SELECT
+    Drug.trade_name,
     MIN(PharmacySells.price) AS lowest_price,
     MAX(PharmacySells.price) AS highest_price,
     AVG(PharmacySells.price) AS average_price
@@ -150,7 +151,7 @@ prescriptions to. Include the pharmacy they work at. Order by patient count
 descending.
 
 ```sql
-SELECT Employee.name AS Pharmacist_name, Pharmacy.name AS Pharmacy_name, 
+SELECT Employee.name AS Pharmacist_name, Pharmacy.name AS Pharmacy_name,
     COUNT(DISTINCT Prescription.patient_id) AS patient_count
 FROM Pharmacist
 JOIN Employee ON Pharmacist.employee_id = Employee.employee_id
@@ -178,5 +179,5 @@ across every pharmacy that carries them.
 
 ## 13. Transfer an employee to a different pharmacy
 
-Move employee 'Laura Martinez' from her current pharmacy to 'MediTrust
-Pharmacy' and update her shift to 'Morning'.
+Move employee 'Laura Martinez' from her current pharmacy to 'MediTrust Pharmacy'
+and update her shift to 'Morning'.
