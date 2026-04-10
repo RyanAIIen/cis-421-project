@@ -13,14 +13,7 @@
 
 ### Report
 
-- [ ] Write the project report (see sections below)
-  - [ ] Application background
-  - [ ] Database requirements specification
-  - [ ] ER diagram
-  - [ ] Relational schema
-  - [ ] Sample database instance
-  - [ ] SQL statements and query/update results
-  - [ ] Team member responsibilities
+- [ ] Write the project report (see `docs/report-outline.md`)
 
 ### Presentation (Gavin)
 
