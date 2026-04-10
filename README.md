@@ -51,7 +51,7 @@ python manage.py runserver
 
 Then open http://127.0.0.1:8000/admin and log in:
 
-- **Username:** `admin`
+- **Username:** `admin@example.com`
 - **Password:** `goblue!`
 
 (Credentials are set in `web/.env.dev`)
