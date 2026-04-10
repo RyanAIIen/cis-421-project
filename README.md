@@ -14,9 +14,25 @@ Project requirements are described in [INSTRUCTIONS.md](INSTRUCTIONS.md).
 - `docs/` — ER diagram, presentation outline, report outline
 - `web/` — Django admin UI
 
+## Running Queries
+
+Requires SQLite3.
+
+```bash
+sqlite3 PharmacyDB.db
+```
+
+Then paste any query from `queries/queries.md`. For example:
+
+```sql
+SELECT name, city FROM Pharmacy;
+```
+
+Use `.quit` to exit.
+
 ## Running the Web UI
 
-Requires Python 3.10+.
+Requires [Python 3.10+](https://www.python.org/downloads/).
 
 ```bash
 cd web
@@ -24,7 +40,13 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 python manage.py migrate
+python manage.py collectstatic --no-input
 python manage.py runserver
 ```
 
-Then open http://127.0.0.1:8000/admin and log in with the superuser credentials.
+Then open http://127.0.0.1:8000/admin and log in:
+
+- **Username:** `admin`
+- **Password:** `goblue!`
+
+(Credentials are set in `web/.env.dev`)

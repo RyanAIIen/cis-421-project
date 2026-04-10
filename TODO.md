@@ -2,7 +2,7 @@
 
 ## Remaining Work
 
-### ER Diagram
+### ER Diagram (Gavin)
 
 - [ ] Update ER diagram in Lucidchart to reflect all changes since original:
   - Add Doctor entity and update Prescription relationship
@@ -22,25 +22,7 @@
   - [ ] SQL statements and query/update results
   - [ ] Team member responsibilities
 
-### Presentation
+### Presentation (Gavin)
 
 - [ ] Build slides from `docs/presentation-outline.md`
 - [ ] Practice to fit within 10 minutes
-
-### Django Admin UI (Ryan)
-
-- [ ] Set up Django project (`django-admin startproject pharmacydb`)
-- [ ] Create a Django app (`python manage.py startapp pharmacy`)
-- [ ] Point `settings.py` at the existing `PharmacyDB.db` file
-- [ ] Run `python manage.py inspectdb` and clean up generated models
-- [ ] Register all 12 models in `admin.py` with sensible `list_display`,
-      `search_fields`, and `list_filter` options
-- [ ] Verify CRUD works for all tables in the admin
-- [ ] Create a superuser for the demo
-
-**Notes:**
-- Use `managed = False` on all models (don't let Django touch the existing schema)
-- The IS-A hierarchy (Employee → Pharmacist/Technician) may need
-  `OneToOneField` instead of the auto-generated FK — check inspectdb output
-- No custom views or query UI needed — basic admin CRUD is sufficient
-- Gavin can jump in if he has bandwidth
