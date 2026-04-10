@@ -48,7 +48,8 @@ class DrugAdmin(admin.ModelAdmin):
 
 @admin.register(Employee)
 class EmployeeAdmin(admin.ModelAdmin):
-    list_display = ("name", "pharmacy", "employee_type", "shift_time")
+    list_display = ("name", "pharmacy", "employee_type", "shift_time", "birthday", "age",
+)
     search_fields = ("name",)
     list_filter = ("employee_type", "pharmacy", "shift_time")
 
@@ -81,6 +82,7 @@ class PatientAdmin(admin.ModelAdmin):
         "sex",
         "insurance",
         "birthday",
+        "age",
         "city",
         "state",
     )

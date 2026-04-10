@@ -1,4 +1,14 @@
+from datetime import date
+
 from django.db import models
+
+
+def calculate_age(birthdate):
+    today = date.today()
+    age = today.year - birthdate.year
+    if (today.month, today.day) < (birthdate.month, birthdate.day):
+        age -= 1
+    return age
 
 
 class Pharmacy(models.Model):
@@ -81,6 +91,10 @@ class Employee(models.Model):
     def __str__(self):
         return self.name
 
+    @property
+    def age(self):
+        return calculate_age(self.birthday) if self.birthday else None
+
 
 class Pharmacist(models.Model):
     employee = models.OneToOneField(
@@ -133,7 +147,7 @@ class Doctor(models.Model):
         db_table = "Doctor"
 
     def __str__(self):
-        return f"Dr. {self.name}"
+        return self.name
 
 
 class Patient(models.Model):
@@ -159,6 +173,10 @@ class Patient(models.Model):
 
     def __str__(self):
         return self.name
+
+    @property
+    def age(self):
+        return calculate_age(self.birthday) if self.birthday else None
 
 
 class PatientPhone(models.Model):
