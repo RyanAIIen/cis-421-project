@@ -16,7 +16,7 @@ Project requirements are described in [INSTRUCTIONS.md](INSTRUCTIONS.md).
 
 ## Running Queries
 
-Requires SQLite3.
+Requires [SQLite3](https://sqlite.org/download.html).
 
 ```bash
 sqlite3 PharmacyDB.db
