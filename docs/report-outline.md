@@ -1,10 +1,6 @@
-# Report Outline
+# Application Background
 
----
-
-## 1. Application Background
-
-**Author: Ryan**
+(Ryan)
 
 - Describe the enterprise: a regional chain of retail pharmacies operating
   across Michigan
@@ -15,32 +11,29 @@
   complex relationships, high data volume, need for integrity constraints
 - Keep to 1-2 paragraphs
 
----
+# Database Requirements
 
-## 2. Database Requirements
-
-**Author: Ryan**
+(Ryan)
 
 Describe informally what the database needs to capture:
 
-- **Pharmacies** — name, address, phone; each employs staff and sells drugs
-- **Employees** — name, address, birthday, shift; specialize into pharmacists or
+- **Pharmacies**: name, address, phone; each employs staff and sells drugs
+- **Employees**: name, address, birthday, shift; specialize into pharmacists or
   technicians (IS-A hierarchy)
-- **Pharmacists** — pharmacy degree, license number; assigned patients; dispense
+- **Pharmacists**: pharmacy degree, license number; assigned patients; dispense
   prescriptions
-- **Pharmacy Technicians** — certification; support pharmacists
-- **Doctors** — name, specialty, phone, address; write prescriptions
-- **Patients** — name, sex, insurance, birthday, address; multiple phone numbers
+- **Pharmacy Technicians**: certification; support pharmacists
+- **Doctors**: name, specialty, phone, address; write prescriptions
+- **Patients**: name, sex, insurance, birthday, address; multiple phone numbers
   (multi-valued); assigned a primary pharmacist
-- **Drugs** — trade name, manufacturer, stock quantity, controlled substance
-  flag
-- **Drug Manufacturers** — name, address; manufacture drugs and contract with
+- **Drugs**: trade name, manufacturer, stock quantity, controlled substance flag
+- **Drug Manufacturers**: name, address; manufacture drugs and contract with
   pharmacies
-- **Prescriptions** — link doctor, pharmacist, patient, and drug; record date
-  and quantity
-- **Contracts** — between pharmacies and manufacturers; include start and end
+- **Prescriptions**: link doctor, pharmacist, patient, and drug; record date and
+  quantity
+- **Contracts**: between pharmacies and manufacturers; include start and end
   dates
-- **Pricing** — each pharmacy sets its own price per drug
+- **Pricing**: each pharmacy sets its own price per drug
 
 Highlight notable modeling decisions:
 
@@ -48,26 +41,22 @@ Highlight notable modeling decisions:
 - Patient phone as a multi-valued attribute
 - Age as a derived attribute (computed from birthday)
 - Prescription captures both the prescribing doctor and the dispensing
-  pharmacist — these are distinct roles
+  pharmacist, these are distinct roles
 
----
+# ER Diagram
 
-## 3. ER Diagram
-
-**Author: Gavin**
+(Gavin)
 
 - Include the full ER diagram (Lucidchart export)
 - Caption or annotate key design decisions:
   - IS-A hierarchy with disjoint discriminator
-  - Multi-valued attribute (Patient phone — double oval)
-  - Derived attribute (Employee/Patient age — dashed oval)
+  - Multi-valued attribute (Patient phone, double oval)
+  - Derived attribute (Employee/Patient age, dashed oval)
   - Prescription relationship connecting Doctor, Pharmacist, Patient, Drug
 
----
+# Relational Schema
 
-## 4. Relational Schema
-
-**Author: Ryan**
+(Ryan)
 
 List the full logical schema with primary keys underlined and foreign keys
 noted. Reference `schema/relational_schema.md` for the complete DDL.
@@ -93,11 +82,9 @@ noted. Reference `schema/relational_schema.md` for the complete DDL.
 Include a brief note on each design decision (IS-A implementation, multi-valued
 attribute, derived attribute, Prescription semantics).
 
----
+# Sample Database Instance
 
-## 5. Sample Database Instance
-
-**Author: Ryan**
+(Ryan)
 
 Show the scale of the data loaded into `PharmacyDB.db`:
 
@@ -120,9 +107,7 @@ Include a representative sample of rows from 3-4 key tables (e.g., Patient,
 Prescription, Drug) to illustrate the data. Full insert statements are in
 `schema/SQL Statements.md`.
 
----
-
-## 6. SQL Statements and Query Results
+# SQL Statements and Query Results
 
 **Authors: Gavin (queries 1–9), Ryan (queries 10–14)**
 
@@ -136,11 +121,9 @@ Reference `queries/queries.md` for SQL and `queries/query-outputs.md` for
 results. Summarize all 14 queries in order. For the two UPDATE queries (12 and
 13), show the state of affected rows before and after.
 
----
+# Team Responsibilities
 
-## 7. Team Responsibilities
-
-**Author: Ryan**
+(Ryan)
 
 | Member     | Responsibilities                                                                                                                   |
 | ---------- | ---------------------------------------------------------------------------------------------------------------------------------- |
