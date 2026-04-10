@@ -1,4 +1,4 @@
-# CIS-421 Project — Pharmacy Database
+# CIS-421 Project - Pharmacy Database
 
 A database design and SQL project for CIS-421 modeling a regional pharmacy
 chain. Includes ER diagram, relational schema, SQLite database, 14 SQL queries,
@@ -8,11 +8,11 @@ Project requirements are described in [INSTRUCTIONS.md](INSTRUCTIONS.md).
 
 ## Project Structure
 
-- `PharmacyDB.db` — SQLite database
-- `schema/` — relational schema (DDL) and sample data insert statements
-- `queries/` — 14 SQL queries/updates with descriptions and outputs
-- `docs/` — ER diagram, presentation outline, report outline
-- `web/` — Django admin UI
+- `PharmacyDB.db` - SQLite database
+- `schema/` - relational schema (DDL) and sample data insert statements
+- `queries/` - 14 SQL queries/updates with descriptions and outputs
+- `docs/` - ER diagram, presentation outline, report outline
+- `web/` - Django admin UI
 
 ## Running Queries
 
