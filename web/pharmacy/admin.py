@@ -1,4 +1,9 @@
 from django.contrib import admin
+
+admin.site.site_header = "PharmDB"
+admin.site.site_title = "PharmDB"
+admin.site.index_title = "Database Administration"
+
 from .models import (
     Pharmacy,
     DrugManufacturer,
@@ -17,14 +22,14 @@ from .models import (
 
 @admin.register(Pharmacy)
 class PharmacyAdmin(admin.ModelAdmin):
-    list_display = ( "name", "city", "state", "phone")
+    list_display = ("name", "city", "state", "phone")
     search_fields = ("name", "city")
     list_filter = ("state",)
 
 
 @admin.register(DrugManufacturer)
 class DrugManufacturerAdmin(admin.ModelAdmin):
-    list_display = ( "name", "city", "state")
+    list_display = ("name", "city", "state")
     search_fields = ("name",)
     list_filter = ("state",)
 
@@ -43,7 +48,7 @@ class DrugAdmin(admin.ModelAdmin):
 
 @admin.register(Employee)
 class EmployeeAdmin(admin.ModelAdmin):
-    list_display = ( "name", "pharmacy", "employee_type", "shift_time")
+    list_display = ("name", "pharmacy", "employee_type", "shift_time")
     search_fields = ("name",)
     list_filter = ("employee_type", "pharmacy", "shift_time")
 
@@ -64,7 +69,7 @@ class PharmacyTechnicianAdmin(admin.ModelAdmin):
 
 @admin.register(Doctor)
 class DoctorAdmin(admin.ModelAdmin):
-    list_display = ( "name", "specialty", "phone", "city", "state")
+    list_display = ("name", "specialty", "phone", "city", "state")
     search_fields = ("name", "specialty")
     list_filter = ("specialty", "state")
 
